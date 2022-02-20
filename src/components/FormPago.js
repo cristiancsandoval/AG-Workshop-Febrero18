@@ -20,7 +20,7 @@ import {
 
 const FormPago = () => {
   const [productos, setProductos] = useState([]);
-  const [pagoTotal, setPagoTotal] = useState(second)
+  const [pagoTotal, setPagoTotal] = useState(74.69)
 
   useEffect(() => {
     getProducts();
@@ -80,7 +80,7 @@ const FormPago = () => {
             <Entry1 id="inputNombre" type="text" name="NombreTarjeta"  placeholder="Propietario"/>
           </div>
           <div>
-            <Button1>Pagar $227.48</Button1>
+            <Button1>Pagar ${pagoTotal}</Button1>
           </div>
         </Payment>
       </div>
