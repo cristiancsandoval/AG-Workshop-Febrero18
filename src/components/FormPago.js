@@ -20,7 +20,7 @@ import {
 
 const FormPago = () => {
   const [productos, setProductos] = useState([]);
-  const [pagoTotal, setPagoTotal] = useState(second)
+  const [pagoTotal, setPagoTotal] = useState("")
 
   useEffect(() => {
     getProducts();
