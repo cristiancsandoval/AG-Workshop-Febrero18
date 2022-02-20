@@ -35,3 +35,33 @@ body {
   width: 90%;
   object-fit:cover;
 }
+
+.home{
+  width: 100%;
+  background-color: #FAFAF8;
+}
+
+.cntr-info h4{
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  color: #332927;
+}
+
+.cntr-info h4:nth-child(2){
+  text-decoration: line-through;
+  color: #B8B4B4;
+  margin-left: 2px;
+}
+
+.cntr-info p{
+  width: 100%;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: left;
+  color: #332927;
+  margin: 8px 0px;
+}

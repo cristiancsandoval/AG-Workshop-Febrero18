@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BtnCarrito, CntrNavbar, Titulo } from '../style/styles'
 
 const Navbar = () => {
+
   return (
     <CntrNavbar>
         <Titulo>Tiendita</Titulo>
@@ -14,7 +15,7 @@ const Navbar = () => {
         </select>
         <BtnCarrito>
             <img src='https://res.cloudinary.com/dbzo53yx4/image/upload/v1645370101/Tiendita/carrito_zvbdjr.svg' alt="carrito icon"/>
-            <p className='valor-carrito'>5</p>
+            <p className='valor-carrito'>0</p>
         </BtnCarrito>
     </CntrNavbar>
   )

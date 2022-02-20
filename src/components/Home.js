@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { url } from '../helpers/url'
 import BannerInicio from './BannerInicio';
+import { BtnAgregar, CntrInfo, CntrOfertas, Descuento, Subtitulo, TarjetaProducto } from "../style/styles";
 
 const Home = () => {
 
@@ -9,7 +10,9 @@ const Home = () => {
   const [carrito, setCarrito] = useState([])
 
   useEffect(() => {
+
     getData();
+
   }, []);
 
   const getData = () => {
@@ -31,31 +34,43 @@ const Home = () => {
     localStorage.setItem("producto", JSON.stringify([...carrito, producto]));
   };
 
+  const calcularDescuento = (pAct, pAnt) =>{
+
+    let desc = 0
+
+    if((pAct>0)&&(pAnt>0)){
+      desc = Math.round((pAnt-pAct)*100/pAnt )
+    }
+
+    return `${String(desc)}% dto`
+
+  }
+
   return (
-    <div>
+    <div className="home">
       <BannerInicio/>
-      <div>
-        <h2>Ofertas</h2>
-        <div>
-          {informacion.map((p) => (
-            <div key={p.id} id={p.id}>
+      <CntrOfertas>
+        <Subtitulo>Ofertas</Subtitulo>
+        {informacion.map((p) => (
+            <TarjetaProducto key={p.id} id={p.id}>
+              <Descuento>{calcularDescuento(p.PrecioActual, p.PrecioAnterior)}</Descuento>
               <img src={p.imagen} alt="imagen de producto" />
-              <h4>{p.precioActual}</h4>
-              <h4>{p.PrecioAnterior}</h4>
-              <br />
-              <p>{p.nombre}</p>
-              <button
+              <CntrInfo className="cntr-info">
+                <h4>{`$${p.PrecioActual}`}</h4>
+                <h4>{`$${p.PrecioAnterior}`}</h4>
+                <p>{p.nombre}</p>
+              </CntrInfo>
+              <BtnAgregar
                 id={p.id}
                 onClick={(e) => {
                   comprarProducto(e);
                 }}
               >
                 Agregar
-              </button>
-            </div>
+              </BtnAgregar>
+            </TarjetaProducto>
           ))}
-        </div>
-      </div>
+      </CntrOfertas>
       <div>
         <h2>Los más populares</h2>
       </div>
