@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import AppTienda from './containers/AppTienda';
 import './index.css';
-import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AppTienda/>
   </React.StrictMode>,
   document.getElementById('root')
 );
