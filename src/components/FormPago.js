@@ -1,39 +1,88 @@
-import React from "react";
-import { ContForm, Back, Prod, Payment } from '../style/FormStyle'
+import React, { useEffect, useState } from "react";
+import {
+  ContForm,
+  Back,
+  BackT,
+  Prod,
+  Card,
+  Names,
+  Payment,
+  Numbers,
+  Entry1,
+  EntryS,
+  Entry2,
+  Button1,
+  TextC,
+  TextC2,
+  ImgC,
+  BtnP,
+} from "../style/FormStyle";
 
 const FormPago = () => {
+  const [productos, setProductos] = useState([]);
+  const [pagoTotal, setPagoTotal] = useState(second)
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
+  const getProducts = () => {
+    let data = localStorage.getItem("producto");
+    data = JSON.parse(data);
+    setProductos(data);
+  };
+
   return (
     <ContForm>
-    <Back><img src="https://res.cloudinary.com/dilwbkj5s/image/upload/v1645375854/Workshop%202/Icons/cancel_jttgob.svg" /></Back>
-    <h6>Volver</h6>
-      <Prod>Productos escogidos</Prod>
+      <Prod>
+        <Back
+          onClick={() => {
+            window.location.href = "/";
+          }}
+        >
+          <img src="https://res.cloudinary.com/dilwbkj5s/image/upload/v1645375854/Workshop%202/Icons/cancel_jttgob.svg" />
+        </Back>
+        <BackT>Volver</BackT>
+        {productos.map((p) => (
+          <Card key={p.id}>
+            <ImgC src={p.imagen} />
+            <div>
+              <TextC>{p.nombre}</TextC>
+              <TextC2>{p.PrecioActual}</TextC2>
+            </div>
+            <BtnP>- 250 {p.unidades} +</BtnP>
+          </Card>
+        ))}
+      </Prod>
       <div>
-        <form id="formulario">
-          <h3>Registro de usuario</h3>
+        <Payment id="formulario">
           <div>
-            <label>Correo electrónico</label>
-            <input id="inputCorreo" type="email" name="email" value="" />
-          </div>
-          <Payment>
-            <label>Información de la tarjeta</label>
-            <input id="inputTarjeta" type="number" name="tarjeta" value="" />
-            <input id="inputTarjeta" type="text" name="Fechatarjeta" />
-            <input
+            <div>
+              <Names>Correo electrónico</Names>
+              <Entry1 id="inputCorreo" type="email" name="email" placeholder="Correo"/>
+            </div>
+            <Names>Información de la tarjeta</Names>
+            <EntryS id="inputTarjeta" type="number" name="tarjeta" placeholder="Número tarjeta"/>
+            <Numbers>
+            <Entry2 id="inputTarjeta" type="text" name="Fechatarjeta" placeholder="Caducidad" />
+            <Entry2
               id="inputTarjeta"
               type="number"
               name="Clavetarjeta"
               min="001"
               max="999"
+              placeholder="CCV"
             />
-          </Payment>
-          <div>
-            <label>Nombre de la tarjeta</label>
-            <input id="inputNombre" type="text" name="NombreTarjeta" />
+            </Numbers>
           </div>
           <div>
-            <button>Pagar $227.48</button>
+            <Names>Nombre de la tarjeta</Names>
+            <Entry1 id="inputNombre" type="text" name="NombreTarjeta"  placeholder="Propietario"/>
           </div>
-        </form>
+          <div>
+            <Button1>Pagar $227.48</Button1>
+          </div>
+        </Payment>
       </div>
     </ContForm>
   );
