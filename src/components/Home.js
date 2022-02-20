@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { url } from '../helpers/url'
 import BannerInicio from './BannerInicio';
-import { url } from "../helpers/url";
 
 const Home = () => {
+
   const [informacion, setInformacion] = useState([]);
-  const [comprados, setComprados] = useState([]);
-  const [favorito, setFavorito] = useState(false);
+  const [carrito, setCarrito] = useState([])
 
   useEffect(() => {
     getData();
@@ -24,17 +23,12 @@ const Home = () => {
       });
   };
 
-  const handleCarrito = () => {
-    setFavorito(true);
-  };
-
   const comprarProducto = (e) => {
     e.preventDefault();
     const id = e.target.id;
     const producto = informacion.find((prod) => prod.id === Number(id));
-    if (favorito === true) {
-      localStorage.setItem("producto", JSON.stringify(producto));
-    }
+    setCarrito([...carrito, producto])      
+    localStorage.setItem("producto", JSON.stringify([...carrito, producto]));
   };
 
   return (
@@ -54,7 +48,6 @@ const Home = () => {
                 id={p.id}
                 onClick={(e) => {
                   comprarProducto(e);
-                  handleCarrito();
                 }}
               >
                 Agregar
