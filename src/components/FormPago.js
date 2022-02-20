@@ -72,7 +72,5 @@ const FormPago = () => {
         </Payment>
       </div>
     </ContForm>
-  );
-};
-
+}
 export default FormPago;
