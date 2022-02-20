@@ -12,11 +12,11 @@ const FormPago = () => {
           <h3>Registro de usuario</h3>
           <div>
             <label>Correo electrónico</label>
-            <input id="inputCorreo" type="email" name="email" value="" />
+            <input id="inputCorreo" type="email" name="email" />
           </div>
           <Payment>
             <label>Información de la tarjeta</label>
-            <input id="inputTarjeta" type="number" name="tarjeta" value="" />
+            <input id="inputTarjeta" type="number" name="tarjeta" />
             <input id="inputTarjeta" type="text" name="Fechatarjeta" />
             <input
               id="inputTarjeta"
