@@ -24,6 +24,8 @@ export const BtnCarrito = styled.button`
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    width: 89px;
+    height: 40px;
     padding: 8px 24px;
     margin: 0px 16px;
     background-color: #0AC763;
