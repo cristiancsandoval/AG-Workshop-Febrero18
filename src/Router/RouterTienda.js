@@ -1,13 +1,13 @@
 import React from 'react'
-import { BrowserRouter, Route, Router } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from '../components/Home'
 
 const RouterTienda = () => {
   return (
     <BrowserRouter>
-        <Router>
+        <Routes>
             <Route exact path='/' element={<Home/>}/>
-        </Router>
+        </Routes>
     </BrowserRouter>
   )
 }
