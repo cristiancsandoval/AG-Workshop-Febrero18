@@ -20,19 +20,6 @@ import {
 
 const FormPago = () => {
   const [productos, setProductos] = useState([]);
-  const [pagoTotal, setPagoTotal] = useState("")
-
-  useEffect(() => {
-    getProducts();
-  }, []);
-
-  const getProducts = () => {
-    let data = localStorage.getItem("producto");
-    data = JSON.parse(data);
-    setProductos(data);
-  };
-
-  return (
     <ContForm>
       <Prod>
         <Back
@@ -80,7 +67,7 @@ const FormPago = () => {
             <Entry1 id="inputNombre" type="text" name="NombreTarjeta"  placeholder="Propietario"/>
           </div>
           <div>
-            <Button1>Pagar $227.48</Button1>
+            <Button1>Pagar ${pagoTotal}</Button1>
           </div>
         </Payment>
       </div>
