@@ -1,8 +1,11 @@
 import React from 'react'
+import RouterTienda from '../Router/RouterTienda'
 
 const AppTienda = () => {
   return (
-    <div>AppTienda</div>
+    <div>
+        <RouterTienda/>
+    </div>
   )
 }
 
