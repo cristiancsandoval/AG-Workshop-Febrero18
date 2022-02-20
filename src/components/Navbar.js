@@ -13,7 +13,9 @@ const Navbar = () => {
                 <option>Medellín</option>
                 <option>Cartagena</option>
         </select>
-        <BtnCarrito>
+        <BtnCarrito onClick={() => {
+            window.location.href = "/pago";
+          }}>
             <img src='https://res.cloudinary.com/dbzo53yx4/image/upload/v1645370101/Tiendita/carrito_zvbdjr.svg' alt="carrito icon"/>
             <p className='valor-carrito'>0</p>
         </BtnCarrito>
