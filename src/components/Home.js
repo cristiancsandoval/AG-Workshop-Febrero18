@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
 import { url } from '../helpers/url'
+import BannerInicio from './BannerInicio';
 
 const Home = () => {
 
@@ -44,6 +45,7 @@ const Home = () => {
 
   return (
     <div>
+      <BannerInicio/>
       <div>
         <h2>Ofertas</h2>
         <div>

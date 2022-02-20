@@ -30,3 +30,25 @@ export const BtnCarrito = styled.button`
     border: none;
     border-radius: 8px;
 `
+
+export const Banner = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 40px;
+    background-color: #FAFAF8;
+    position: relative;
+`
+
+export const TextoBanner = styled.h2`
+    width: 85%;
+    text-align: center;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 42px;
+    color:  #FEFEFE;
+    position: absolute;
+    top: 40%;
+`
