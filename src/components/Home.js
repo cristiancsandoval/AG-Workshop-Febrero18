@@ -71,9 +71,6 @@ const Home = () => {
             </TarjetaProducto>
           ))}
       </CntrOfertas>
-      <div>
-        <h2>Los más populares</h2>
-      </div>
     </div>
   );
 };

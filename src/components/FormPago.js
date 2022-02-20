@@ -19,8 +19,8 @@ import {
 } from "../style/FormStyle";
 
 const FormPago = () => {
+
   const [productos, setProductos] = useState([]);
-  const [pagoTotal, setPagoTotal] = useState(74.69)
 
   useEffect(() => {
     getProducts();
@@ -40,7 +40,7 @@ const FormPago = () => {
             window.location.href = "/";
           }}
         >
-          <img src="https://res.cloudinary.com/dilwbkj5s/image/upload/v1645375854/Workshop%202/Icons/cancel_jttgob.svg" />
+          <img src="https://res.cloudinary.com/dilwbkj5s/image/upload/v1645375854/Workshop%202/Icons/cancel_jttgob.svg" alt="img producto"/>
         </Back>
         <BackT>Volver</BackT>
         {productos.map((p) => (
@@ -80,7 +80,7 @@ const FormPago = () => {
             <Entry1 id="inputNombre" type="text" name="NombreTarjeta"  placeholder="Propietario"/>
           </div>
           <div>
-            <Button1>Pagar ${pagoTotal}</Button1>
+            <Button1>Pagar</Button1>
           </div>
         </Payment>
       </div>
