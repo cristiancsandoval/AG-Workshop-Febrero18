@@ -5,9 +5,9 @@ import Home from '../components/Home'
 const RouterTienda = () => {
   return (
     <BrowserRouter>
-        <Router>
+        <Routes>
             <Route exact path='/' element={<Home/>}/>
-        </Router>
+        </Routes>
     </BrowserRouter>
   )
 }
