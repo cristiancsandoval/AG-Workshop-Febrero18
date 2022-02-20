@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AppTienda from './containers/AppTienda';
-import './index.css';
+import './style/index.css';
 
 ReactDOM.render(
   <React.StrictMode>
